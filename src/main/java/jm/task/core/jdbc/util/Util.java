@@ -9,6 +9,7 @@ public class Util {
     private static final String URL = "jdbc:mysql://localhost:3306/database1.1.4";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
+    private static Connection connection;
 
     private Util() {
 
@@ -25,7 +26,7 @@ public class Util {
         return connection;
     }
 
-    public static void closeConnection(Connection connection) {
+    public static void closeConnection() {
         if (connection != null) {
             try {
                 connection.close();
