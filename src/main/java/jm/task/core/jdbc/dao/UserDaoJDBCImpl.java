@@ -27,8 +27,6 @@ public class UserDaoJDBCImpl implements UserDao {
             connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            Util.closeConnection();
         }
     }
 
@@ -40,8 +38,6 @@ public class UserDaoJDBCImpl implements UserDao {
             connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            Util.closeConnection();
         }
     }
 
@@ -73,7 +69,6 @@ public class UserDaoJDBCImpl implements UserDao {
             try {
                 if (connection != null) {
                     connection.setAutoCommit(true);
-                    Util.closeConnection();
                 }
             } catch (SQLException e2) {
                 e2.printStackTrace();
@@ -106,7 +101,6 @@ public class UserDaoJDBCImpl implements UserDao {
             try {
                 if (connection != null) {
                     connection.setAutoCommit(true);
-                    Util.closeConnection();
                 }
             } catch (SQLException e2) {
                 e2.printStackTrace();
@@ -131,8 +125,6 @@ public class UserDaoJDBCImpl implements UserDao {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            Util.closeConnection();
         }
         return allUsers;
     }
@@ -154,7 +146,6 @@ public class UserDaoJDBCImpl implements UserDao {
         } finally {
             try {
                 connection.setAutoCommit(true);
-                Util.closeConnection();
             } catch (SQLException e2) {
                 e2.printStackTrace();
             }
